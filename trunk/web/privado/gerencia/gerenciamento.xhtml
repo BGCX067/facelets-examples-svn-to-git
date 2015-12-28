@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets"
+                template="/recursos/template/templateGeral.xhtml"
+                xmlns:rich="http://richfaces.org/rich">
+
+    <!--    <ui:define name="top">
+
+        </ui:define>-->
+
+    <ui:define name="left">
+        <ui:include src="/WEB-INF/recursos/include/menuEsquerdo.xhtml" />
+    </ui:define>
+
+    <ui:define name="right">
+        right
+    </ui:define>
+
+    <ui:define name="content">
+        <h1>Gerenciamento</h1>
+        <br/>
+        <rich:tabPanel switchType="ajax">
+
+            <rich:tab label="Usuários (Operação Lenta)" onclick="">
+
+                <ui:decorate template="/WEB-INF/recursos/include/componentes/modal/modal.xhtml" >
+                    <ui:define name="texto">
+                        <h1>TEXTO</h1>
+                        <br/>
+                        <a href="javascript:Richfaces.hideModalPanel('panelAguarde')" >Fechar</a>
+                    </ui:define>
+                </ui:decorate>
+
+                <br/>
+                Lista de usuários
+                <br/>
+                <br/>
+                <a href="javascript:Richfaces.showModalPanel('panelAguarde')" >Operação Lenta</a>
+                <br/>
+                <br/>
+
+            </rich:tab>
+
+            <rich:tab label="Produtos">
+
+                <ui:include src="/WEB-INF/recursos/include/componentes/tabelas/tabelaProdutos.xhtml" >
+                    <ui:param name="tabelaProdutos" value="#{ProdutoBean.tabelaProdutos}"/>
+                    <ui:param name="renderCodigo" value="false"/>
+                    <ui:param name="renderVendedor" value="false"/>
+                    <ui:param name="renderSetor" value="false"/>
+                </ui:include>
+
+            </rich:tab>
+
+        </rich:tabPanel>
+    </ui:define>
+
+    <ui:define name="bottom">
+        bottom
+    </ui:define>
+
+</ui:composition>

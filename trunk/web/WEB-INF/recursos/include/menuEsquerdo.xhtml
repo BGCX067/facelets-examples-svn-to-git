@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets">
+    
+    <ul style="text-decoration: underline">
+        <li>
+            <a href="#{facesContext.externalContext.request.contextPath}">
+             Início
+            </a>
+        </li>
+        <br/>
+        <li>
+            <a href="#{facesContext.externalContext.request.contextPath}/privado/produto/listaProdutos.uff">
+             Produtos
+            </a>
+        </li>
+        <br/>
+        <li style="outline: #D20005; ">
+            <a href="#{facesContext.externalContext.request.contextPath}/privado/gerencia/gerenciamento.uff">
+                Gerenciamento
+            </a>
+        </li>
+    </ul>
+
+</ui:composition>

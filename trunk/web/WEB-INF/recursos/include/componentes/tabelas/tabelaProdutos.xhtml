@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:rich="http://richfaces.org/rich"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+    <ui:composition>
+        
+        <rich:dataTable id="tabelaProdutos"
+                        style="font-size:10px" width="100%"
+                        columnClasses=",,coluna-centralizada,coluna-centralizada, coluna-centralizada"
+                        var="produto"
+                        rows="50"
+                        value="#{tabelaProdutos}">
+
+            <rich:column rendered="#{renderCodigo != false}">
+                <f:facet name="header">
+                    Código
+                </f:facet>
+                #{produto.codigo}
+            </rich:column>
+            <rich:column>
+                <f:facet name="header">
+                    Nome
+                </f:facet>
+                <ui:include src="/WEB-INF/recursos/include/diversos/toolTipProduto.xhtml">
+                    <ui:param name="produto" value="#{produto}"/>
+                </ui:include>
+                #{produto.nome}
+            </rich:column>
+            <rich:column rendered="#{renderSetor != false}">
+                <f:facet name="header">
+                    Setor
+                </f:facet>
+                #{produto.setor}
+            </rich:column>
+            <rich:column rendered="#{renderVendedor != false}">
+                <f:facet name="header">
+                    vendedor
+                </f:facet>
+                #{produto.vendedor}
+            </rich:column>
+            <rich:column rendered="#{renderEstoque != false}">
+                <f:facet name="header">
+                    Estoque
+                </f:facet>
+                #{produto.estoque}
+            </rich:column>
+
+
+
+        </rich:dataTable>
+
+    </ui:composition>
+</html>

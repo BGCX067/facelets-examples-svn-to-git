@@ -1,0 +1,20 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:rich="http://richfaces.org/rich"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+    <ui:composition>
+
+        <rich:toolTip followMouse="true" direction="top-right" showDelay="100"
+                      styleClass="tooltip-text" style=" width: 200px; height:120px">
+            
+            <div style="border: 1px solid; padding: 10px; font-size: 13px; text-align: center; margin-bottom: 5px"><b>Dados do Produto:</b></div>
+
+            <div>Código: <b>#{produto.codigo}</b> </div>
+            <div>Nome: <b>#{produto.nome}</b> </div>
+            <div>Setor: <b>#{produto.setor}</b> </div>
+            <div>Vendedor: <b>#{produto.vendedor}</b> </div>
+            <div>Estoque: <b>#{produto.estoque}</b> </div>
+            <br/>
+        </rich:toolTip>
+    </ui:composition>
+
+</html>

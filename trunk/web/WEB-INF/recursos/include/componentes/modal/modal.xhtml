@@ -1,0 +1,21 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"      
+      xmlns:rich="http://richfaces.org/rich"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <ui:component>
+        <rich:modalPanel id="panelAguarde" width="#{larguraModal != null ? larguraModal : 350 }" height="#{alturaModal != null ? alturaModal : 140 }" >
+            <f:facet name="header">
+                <ui:insert name="titulo" >Processo em andamento...</ui:insert>
+            </f:facet>
+            <center>
+                <img alt="Loading" src="#{facesContext.externalContext.request.contextPath}/recursos/imagens/loading.gif"/>
+            </center>
+            <br/><br/>
+            <ui:insert name="texto" >
+                <div class="acenter">
+                    <span class="mensagem-ajuda-verde">Essa operação pode levar alguns instantes.</span>
+                </div>
+            </ui:insert>
+        </rich:modalPanel>
+    </ui:component>
+</html>
